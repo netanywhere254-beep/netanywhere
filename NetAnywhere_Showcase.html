@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>net.anywhere | FAST. RELIABLE. ANYWHERE.</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kenya: {
+                            red: '#E42313',
+                            green: '#008751',
+                            black: '#121212',
+                        },
+                        brand: {
+                            cyan: '#00d2ff',
+                            dark: '#070a13',
+                            card: '#0d1322',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #070a13;
+            background-image: 
+                radial-gradient(at 50% 0%, rgba(228, 35, 19, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 50%, rgba(0, 135, 81, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(0, 210, 255, 0.12) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .kenya-border-glow {
+            position: relative;
+        }
+        .kenya-border-glow::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 1.5rem;
+            background: linear-gradient(135deg, #E42313, #008751, #00d2ff);
+            z-index: -1;
+            opacity: 0.6;
+            filter: blur(8px);
+            transition: opacity 0.3s ease;
+        }
+        .kenya-border-glow:hover::before {
+            opacity: 1;
+        }
+
+        .glass-panel {
+            background: rgba(13, 19, 34, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .text-glow-red {
+            text-shadow: 0 0 15px rgba(228, 35, 19, 0.6);
+        }
+        .text-glow-green {
+            text-shadow: 0 0 15px rgba(0, 135, 81, 0.6);
+        }
+        .text-glow-cyan {
+            text-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+        }
+    </style>
+</head>
+<body class="text-slate-100 font-sans antialiased selection:bg-kenya-red selection:text-white pb-12">
+
+    <header class="sticky top-0 z-40 glass-panel border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo (Matching SVG emblem from upload) -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 relative flex items-center justify-center">
+                        <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_0_10px_rgba(0,135,81,0.5)]">
+                            <!-- Outer Red & Green Swirl Ring -->
+                            <circle cx="50" cy="50" r="44" fill="none" stroke="#E42313" stroke-width="5" stroke-dasharray="140 140" stroke-linecap="round" transform="rotate(-40 50 50)"/>
+                            <circle cx="50" cy="50" r="44" fill="none" stroke="#008751" stroke-width="5" stroke-dasharray="120 120" stroke-linecap="round" transform="rotate(135 50 50)"/>
+                            <!-- Globe Mesh -->
+                            <ellipse cx="50" cy="50" rx="30" ry="38" fill="none" stroke="#cbd5e1" stroke-width="1.5" opacity="0.7"/>
+                            <ellipse cx="50" cy="50" rx="38" ry="18" fill="none" stroke="#cbd5e1" stroke-width="1.5" opacity="0.7"/>
+                            <line x1="50" y1="10" x2="50" y2="90" stroke="#cbd5e1" stroke-width="1.5"/>
+                            <line x1="10" y1="50" x2="90" y2="50" stroke="#cbd5e1" stroke-width="1.5"/>
+                            <!-- Wi-Fi Waves Bottom -->
+                            <path d="M 32 72 Q 50 56 68 72" fill="none" stroke="#E42313" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M 38 78 Q 50 66 62 78" fill="none" stroke="#121212" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M 44 84 Q 50 75 56 84" fill="none" stroke="#008751" stroke-width="4" stroke-linecap="round"/>
+                            <!-- Kenyan Shield Right -->
+                            <g transform="translate(68, 38) scale(0.65)">
+                                <path d="M 12 0 Q 24 18 12 36 Q 0 18 12 0 Z" fill="#E42313" stroke="#ffffff" stroke-width="1.5"/>
+                                <line x1="12" y1="0" x2="12" y2="36" stroke="#ffffff" stroke-width="2"/>
+                                <circle cx="12" cy="18" r="3" fill="#ffffff"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-outfit text-2xl font-black tracking-tight text-white flex items-center leading-none">
+                            <span class="text-kenya-red">net</span><span class="text-slate-400 font-light">.</span><span class="text-white">anywhere</span>
+                        </div>
+                        <span class="block text-[9px] font-bold tracking-[0.2em] text-kenya-green uppercase mt-0.5">FAST • RELIABLE • ANYWHERE</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-widest font-bold text-slate-300">
+                    <a href="#packages" class="hover:text-cyan-400 transition">Packages</a>
+                    <a href="#promos" class="hover:text-kenya-green transition">Free Trial & Offers</a>
+                    <a href="#estimator" class="hover:text-cyan-400 transition">Usage Estimator</a>
+                    <a href="#contact" class="hover:text-kenya-red transition">Contact</a>
+                </nav>
+
+                <!-- Phone CTA -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="https://wa.me/254115503175" target="_blank" class="flex items-center gap-2 bg-gradient-to-r from-kenya-red to-kenya-green text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg shadow-kenya-red/20 hover:scale-105 transition">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>0115 503 175</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMenu()" class="md:hidden text-slate-300 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileNav" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 space-y-3">
+            <a href="#packages" onclick="toggleMenu()" class="block text-sm font-bold text-slate-300 hover:text-cyan-400">HOTSPOT PACKAGES</a>
+            <a href="#promos" onclick="toggleMenu()" class="block text-sm font-bold text-slate-300 hover:text-kenya-green">FREE TRIAL & OFFERS</a>
+            <a href="#estimator" onclick="toggleMenu()" class="block text-sm font-bold text-slate-300 hover:text-cyan-400">USAGE ESTIMATOR</a>
+            <a href="#contact" onclick="toggleMenu()" class="block text-sm font-bold text-slate-300 hover:text-kenya-red">CONTACT & SUPPORT</a>
+            <a href="tel:0115503175" class="block w-full text-center bg-kenya-red text-white font-bold py-2.5 rounded-xl">Call: 0115 503 175</a>
+        </div>
+    </header>
+
+    <section class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Left Main Tagline -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-kenya-red/40 text-kenya-red text-xs font-bold uppercase tracking-wider mb-6">
+                        <span class="w-2 h-2 rounded-full bg-kenya-red animate-ping"></span>
+                        High-Speed Broadband & Wi-Fi Hotspot Network
+                    </div>
+                    
+                    <h1 class="font-outfit text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight uppercase">
+                        STAY CONNECTED <br>
+                        <span class="text-glow-red text-kenya-red">ANYTIME,</span> 
+                        <span class="text-glow-green text-kenya-green">ANYWHERE!</span>
+                    </h1>
+
+                    <p class="mt-6 text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                        Ultra-fast, fiber-backed Wi-Fi hotspot access and dedicated home connections. Instant M-PESA activation with zero waiting time!
+                    </p>
+
+                    <!-- Flyer Slogan Ribbon -->
+                    <div class="mt-6 inline-flex items-center gap-3 bg-gradient-to-r from-kenya-red via-slate-900 to-kenya-green p-3 rounded-2xl border border-slate-700/80 shadow-xl">
+                        <i class="fa-solid fa-bolt text-yellow-400 text-xl animate-bounce"></i>
+                        <span class="font-outfit text-base sm:text-lg font-extrabold uppercase tracking-wide text-white">
+                            CONNECT MORE, PAY LESS!
+                        </span>
+                    </div>
+
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#packages" class="w-full sm:w-auto text-center bg-gradient-to-r from-kenya-red to-red-600 hover:from-red-600 hover:to-kenya-red text-white font-outfit text-lg font-bold px-8 py-4 rounded-xl shadow-lg shadow-kenya-red/30 transition transform hover:-translate-y-0.5 uppercase tracking-wider">
+                            Get Connected Now
+                        </a>
+                        <button onclick="openModal('freeTrialModal')" class="w-full sm:w-auto glass-panel hover:bg-slate-800 text-kenya-green font-outfit text-lg font-bold px-8 py-4 rounded-xl border border-kenya-green/40 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-gift"></i>
+                            Claim 30 Min Free Trial
+                        </button>
+                    </div>
+
+                    <!-- Flyer Footer Banner Sub-text -->
+                    <div class="mt-8 pt-6 border-t border-slate-800/80 flex items-center justify-center lg:justify-start gap-3 text-xs text-slate-400 font-bold uppercase tracking-widest">
+                        <span>🇰🇪 CONNECTING KENYA</span>
+                        <span>•</span>
+                        <span>POWERING POSSIBILITIES 🇰🇪</span>
+                    </div>
+                </div>
+
+                <!-- Right Feature Image Container -->
+                <div class="lg:col-span-5 relative">
+                    <div class="kenya-border-glow rounded-3xl p-1">
+                        <div class="glass-panel p-6 sm:p-8 rounded-3xl space-y-6">
+                            
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3.5 h-3.5 rounded-full bg-kenya-green animate-pulse"></div>
+                                    <span class="font-outfit font-bold text-sm text-slate-200 uppercase tracking-wider">Hotspot Live Status</span>
+                                </div>
+                                <span class="text-xs bg-kenya-green/20 text-kenya-green font-bold px-3 py-1 rounded-full border border-kenya-green/30">OPERATIONAL</span>
+                            </div>
+
+                            <!-- Live Demo Stats -->
+                            <div class="space-y-4">
+                                <div class="bg-slate-900/90 p-4 rounded-2xl border border-slate-800">
+                                    <div class="flex justify-between text-xs font-semibold text-slate-400 mb-1">
+                                        <span>Download Velocity</span>
+                                        <span class="text-cyan-400 font-mono font-bold">Unlimited High-Speed</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-kenya-red via-yellow-400 to-kenya-green h-full w-full"></div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-slate-900/90 p-4 rounded-2xl border border-slate-800">
+                                    <div class="flex justify-between text-xs font-semibold text-slate-400 mb-1">
+                                        <span>M-PESA Instant STK Push</span>
+                                        <span class="text-kenya-green font-bold">Auto-Connect</span>
+                                    </div>
+                                    <div class="text-[11px] text-slate-400 flex items-center gap-2 mt-1">
+                                        <i class="fa-solid fa-circle-check text-kenya-green"></i> Pay via Till / Paybill & browse instantly.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Highlights from flyer footer -->
+                            <div class="grid grid-cols-2 gap-3 pt-2">
+                                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 text-center">
+                                    <i class="fa-solid fa-tachograph-digital text-cyan-400 text-lg mb-1"></i>
+                                    <p class="text-[11px] font-bold text-slate-300 uppercase">HIGH SPEED INTERNET</p>
+                                </div>
+                                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 text-center">
+                                    <i class="fa-solid fa-shield-halved text-kenya-green text-lg mb-1"></i>
+                                    <p class="text-[11px] font-bold text-slate-300 uppercase">RELIABLE CONNECTION</p>
+                                </div>
+                                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 text-center">
+                                    <i class="fa-solid fa-location-dot text-kenya-red text-lg mb-1"></i>
+                                    <p class="text-[11px] font-bold text-slate-300 uppercase">COVERAGE ANYWHERE</p>
+                                </div>
+                                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 text-center">
+                                    <i class="fa-solid fa-headset text-yellow-400 text-lg mb-1"></i>
+                                    <p class="text-[11px] font-bold text-slate-300 uppercase">24/7 SUPPORT</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="promos" class="py-10 bg-slate-950/70 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Free Trial Banner -->
+                <div class="bg-gradient-to-r from-emerald-950 to-slate-900 p-6 sm:p-8 rounded-3xl border border-kenya-green/40 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden">
+                    <div class="space-y-2 text-center sm:text-left">
+                        <div class="inline-flex items-center gap-2 bg-kenya-green/20 text-kenya-green px-3 py-1 rounded-full text-xs font-black uppercase">
+                            <i class="fa-solid fa-gift"></i> TRY US FREE TODAY!
+                        </div>
+                        <h3 class="font-outfit text-2xl font-black text-white uppercase">GET 30 MINUTES FREE TRIAL!</h3>
+                        <p class="text-xs text-slate-300 font-medium">Test our high speed before you buy. No payment needed!</p>
+                    </div>
+                    <button onclick="openModal('freeTrialModal')" class="shrink-0 bg-kenya-green hover:bg-emerald-600 text-white font-outfit font-black px-6 py-3 rounded-xl shadow-lg transition">
+                        CLAIM FREE 30 MIN
+                    </button>
+                </div>
+
+                <!-- Refer & Earn Banner -->
+                <div class="bg-gradient-to-r from-red-950 to-slate-900 p-6 sm:p-8 rounded-3xl border border-kenya-red/40 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden">
+                    <div class="space-y-2 text-center sm:text-left">
+                        <div class="inline-flex items-center gap-2 bg-kenya-red/20 text-kenya-red px-3 py-1 rounded-full text-xs font-black uppercase">
+                            <i class="fa-solid fa-users"></i> REFER & EARN!
+                        </div>
+                        <h3 class="font-outfit text-2xl font-black text-white uppercase">30 MINUTES FREE WIFI!</h3>
+                        <p class="text-xs text-slate-300 font-medium">Refer a friend and you BOTH get 30 minutes free access!</p>
+                    </div>
+                    <button onclick="openModal('referModal')" class="shrink-0 bg-kenya-red hover:bg-red-600 text-white font-outfit font-black px-6 py-3 rounded-xl shadow-lg transition">
+                        GET REFERRAL LINK
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-kenya-green font-outfit font-extrabold text-sm uppercase tracking-widest bg-kenya-green/10 px-4 py-1.5 rounded-full border border-kenya-green/30">
+                    High-Speed Internet Packages
+                </span>
+                <h2 class="font-outfit text-3xl sm:text-5xl font-black text-white mt-4 uppercase tracking-tight">
+                    CHOOSE YOUR <span class="text-kenya-red">PLAN</span>
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    Superfast connectivity for browsing, social media, 4K streaming, and gaming.
+                </p>
+            </div>
+
+            <!-- Standard Packages Grid (From Flyer) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- 1 HOUR (Ksh 10) -->
+                <div class="glass-panel rounded-3xl p-6 border border-emerald-500/40 hover:border-emerald-400 transition flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full">Standard</span>
+                        </div>
+                        <h3 class="font-outfit text-2xl font-black text-white uppercase">1 HOUR</h3>
+                        <p class="text-xs text-slate-400 mt-1">Quick browsing & chats</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-black text-emerald-400 font-outfit">Ksh 10</span>
+                        </div>
+                    </div>
+                    <button onclick="selectPackage('1 HOUR', '10')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-outfit font-black py-3 rounded-xl transition shadow-lg uppercase tracking-wider text-sm">
+                        Buy Voucher
+                    </button>
+                </div>
+
+                <!-- 2 HOURS (Ksh 15) -->
+                <div class="glass-panel rounded-3xl p-6 border border-orange-500/40 hover:border-orange-400 transition flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full">Express</span>
+                        </div>
+                        <h3 class="font-outfit text-2xl font-black text-white uppercase">2 HOURS</h3>
+                        <p class="text-xs text-slate-400 mt-1">Social media & downloads</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-black text-orange-400 font-outfit">Ksh 15</span>
+                        </div>
+                    </div>
+                    <button onclick="selectPackage('2 HOURS', '15')" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-outfit font-black py-3 rounded-xl transition shadow-lg uppercase tracking-wider text-sm">
+                        Buy Voucher
+                    </button>
+                </div>
+
+                <!-- 4 HOURS (Ksh 20) -->
+                <div class="glass-panel rounded-3xl p-6 border border-sky-500/40 hover:border-sky-400 transition flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full">Value</span>
+                        </div>
+                        <h3 class="font-outfit text-2xl font-black text-white uppercase">4 HOURS</h3>
+                        <p class="text-xs text-slate-400 mt-1">Work sessions & video calls</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-black text-sky-400 font-outfit">Ksh 20</span>
+                        </div>
+                    </div>
+                    <button onclick="selectPackage('4 HOURS', '20')" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-outfit font-black py-3 rounded-xl transition shadow-lg uppercase tracking-wider text-sm">
+                        Buy Voucher
+                    </button>
+                </div>
+
+                <!-- 6 HOURS (Ksh 30) -->
+                <div class="glass-panel rounded-3xl p-6 border border-kenya-red/40 hover:border-kenya-red transition flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-kenya-red/20 text-kenya-red flex items-center justify-center text-xl font-bold">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-kenya-red bg-kenya-red/10 px-3 py-1 rounded-full">Popular</span>
+                        </div>
+                        <h3 class="font-outfit text-2xl font-black text-white uppercase">6 HOURS</h3>
+                        <p class="text-xs text-slate-400 mt-1">Half-day non-stop access</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-black text-kenya-red font-outfit">Ksh 30</span>
+                        </div>
+                    </div>
+                    <button onclick="selectPackage('6 HOURS', '30')" class="w-full bg-kenya-red hover:bg-red-600 text-white font-outfit font-black py-3 rounded-xl transition shadow-lg uppercase tracking-wider text-sm">
+                        Buy Voucher
+                    </button>
+                </div>
+
+                <!-- 12 HOURS SUPER SPEED (Ksh 50) -->
+                <div class="glass-panel rounded-3xl p-6 border border-purple-500/40 hover:border-purple-400 transition flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-gauge-high"></i>
+                            </div>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full">Super Speed</span>
+                        </div>
+                        <h3 class="font-outfit text-2xl font-black text-white uppercase">12 HOURS</h3>
+                        <p class="text-xs text-purple-300 font-semibold mt-1">(SUPER SPEED)</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-black text-purple-400 font-outfit">Ksh 50</span>
+                        </div>
+                    </div>
+                    <button onclick="selectPackage('12 HOURS (SUPER SPEED)', '50')" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-outfit font-black py-3 rounded-xl transition shadow-lg uppercase tracking-wider text-sm">
+                        Buy Voucher
+                    </button>
+                </div>
+
+                <!-- 24 HOURS / 1 DAY SUPER SPEED (Ksh 100) -->
+                <div class="glass-panel rounded-3xl p-6 border border-indigo-500/40 hover:border-indigo-400 transition flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-calendar-day"></i>
+                            </div>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full">1 Day Pass</span>
+                        </div>
+                        <h3 class="font-outfit text-2xl font-black text-white uppercase">24 HOURS</h3>
+                        <p class="text-xs text-indigo-300 font-semibold mt-1">(SUPER SPEED / 1 DAY)</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-black text-indigo-400 font-outfit">Ksh 100</span>
+                        </div>
+                    </div>
+                    <button onclick="selectPackage('24 HOURS (1 DAY SUPER SPEED)', '100')" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-outfit font-black py-3 rounded-xl transition shadow-lg uppercase tracking-wider text-sm">
+                        Buy Voucher
+                    </button>
+                </div>
+
+                <!-- VIP UNLIMITED (Ksh 200) -->
+                <div class="glass-panel rounded-3xl p-6 border-2 border-yellow-500/60 relative flex flex-col justify-between group col-span-1 sm:col-span-2 shadow-2xl shadow-yellow-500/10">
+                    <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-yellow-500 to-amber-600 text-slate-950 font-outfit font-black text-xs px-4 py-1 rounded-full uppercase">
+                        👑 VIP UNLIMITED STREAMING
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full">20 Hours Duration</span>
+                        </div>
+                        <h3 class="font-outfit text-3xl font-black text-white uppercase">VIP UNLIMITED</h3>
+                        <p class="text-xs text-yellow-300 font-semibold mt-1">HIGH-SPEED STREAMING (20 HOURS)</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-black text-yellow-400 font-outfit">Ksh 200</span>
+                        </div>
+                    </div>
+                    <button onclick="selectPackage('VIP UNLIMITED (20 HOURS STREAMING)', '200')" class="w-full bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-slate-950 font-outfit font-black py-3 rounded-xl transition shadow-lg uppercase tracking-wider text-sm">
+                        Buy VIP Pass
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Featured Wide Banner: 30 Day Home Unlimited Superfast (From Flyer) -->
+            <div class="mt-8 bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 rounded-3xl p-8 border-2 border-kenya-green shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    <div class="lg:col-span-8 space-y-3">
+                        <div class="inline-flex items-center gap-2 bg-kenya-green/20 text-kenya-green px-3.5 py-1 rounded-full text-xs font-black uppercase">
+                            <i class="fa-solid fa-house-signal"></i> Home Unlimited Installation
+                        </div>
+                        <h3 class="font-outfit text-3xl sm:text-4xl font-black text-white uppercase">
+                            30 DAY HOME UNLIMITED SUPERFAST
+                        </h3>
+                        <p class="text-sm text-slate-300">
+                            Dedicated monthly fiber connection directly to your house or apartment. Truly unlimited downloads with no data caps.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-4 text-center lg:text-right">
+                        <p class="text-xs text-slate-400 uppercase font-bold">For as low as</p>
+                        <div class="font-outfit text-4xl sm:text-5xl font-black text-kenya-green my-1">
+                            Ksh 1,500
+                        </div>
+                        <button onclick="selectPackage('30 DAY HOME UNLIMITED SUPERFAST', '1500')" class="mt-3 w-full sm:w-auto bg-kenya-green hover:bg-emerald-600 text-white font-outfit font-black px-8 py-3.5 rounded-xl transition shadow-xl uppercase tracking-wider text-sm">
+                            Book Home Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="estimator" class="py-16 bg-slate-950/60 border-y border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-cyan-400 font-outfit font-extrabold text-xs uppercase tracking-widest bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/30">
+                    Smart Recommendation Tool
+                </span>
+                <h2 class="font-outfit text-3xl font-black text-white mt-3 uppercase">Which Package Do You Need?</h2>
+            </div>
+
+            <div class="glass-panel p-6 sm:p-10 rounded-3xl space-y-6">
+                <div>
+                    <label class="block text-sm font-bold text-slate-300 mb-2">What will you be using the internet for?</label>
+                    <select id="usageType" onchange="calculateRecommendation()" class="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-kenya-green">
+                        <option value="10">Quick WhatsApp & Social Media Check (Ksh 10 - 1 Hr)</option>
+                        <option value="30">Half Day Work & Web Surfing (Ksh 30 - 6 Hrs)</option>
+                        <option value="100">Full Day Super Speed Download (Ksh 100 - 24 Hrs)</option>
+                        <option value="200">Non-stop 4K Streaming / Movies (Ksh 200 - VIP Unlimited)</option>
+                        <option value="1500">Monthly Home Wi-Fi for Whole House (Ksh 1,500 - 30 Days)</option>
+                    </select>
+                </div>
+
+                <div id="recResult" class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 text-center">
+                    <p class="text-xs text-slate-400 font-bold uppercase">Recommended Package</p>
+                    <h4 id="recTitle" class="font-outfit text-2xl font-black text-kenya-green mt-1">1 HOUR (Ksh 10)</h4>
+                    <p id="recDesc" class="text-xs text-slate-300 mt-1">Perfect for quick messages, checking emails, and short browsing sessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Details matching Flyer Footer -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div>
+                        <span class="text-kenya-red font-outfit font-extrabold text-xs uppercase tracking-widest bg-kenya-red/10 px-3.5 py-1 rounded-full border border-kenya-red/30">
+                            Get Connected
+                        </span>
+                        <h2 class="font-outfit text-3xl sm:text-4xl font-black text-white mt-3 uppercase">
+                            BOOK YOUR WIFI NOW!
+                        </h2>
+                        <p class="text-slate-400 text-sm mt-2">
+                            Have questions or need assistance setting up your connection? Reach out via call or WhatsApp immediately.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <a href="https://wa.me/254115503175" target="_blank" class="flex items-center gap-4 glass-panel p-5 rounded-2xl border border-slate-800 hover:border-kenya-green transition group">
+                            <div class="w-12 h-12 rounded-2xl bg-kenya-green/20 text-kenya-green flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold uppercase">Call / WhatsApp Support</p>
+                                <p class="font-outfit text-xl font-extrabold text-white mt-0.5">0115 503 175</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:netanywhere254@gmail.com" class="flex items-center gap-4 glass-panel p-5 rounded-2xl border border-slate-800 hover:border-kenya-red transition group">
+                            <div class="w-12 h-12 rounded-2xl bg-kenya-red/20 text-kenya-red flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold uppercase">Official Email</p>
+                                <p class="font-outfit text-base font-extrabold text-white mt-0.5">netanywhere254@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center gap-4 glass-panel p-5 rounded-2xl border border-slate-800">
+                            <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-brands fa-facebook"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold uppercase">Social Handle</p>
+                                <p class="font-outfit text-base font-extrabold text-white mt-0.5">@net.anywhere</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Quick Inquiry Form -->
+                <div class="lg:col-span-6">
+                    <div class="glass-panel p-8 rounded-3xl border border-slate-700/60 shadow-2xl">
+                        <h3 class="font-outfit text-2xl font-black text-white uppercase mb-6">Send Us a Direct Message</h3>
+                        
+                        <form onsubmit="handleInquiry(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1.5 uppercase">Phone Number (M-PESA Number)</label>
+                                <input type="tel" required placeholder="e.g. 0712345678" class="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-kenya-red">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1.5 uppercase">Estate / Location</label>
+                                <input type="text" required placeholder="Enter your estate or hotspot zone" class="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-kenya-red">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1.5 uppercase">Interested Service</label>
+                                <select class="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-kenya-red">
+                                    <option>Wi-Fi Hotspot Voucher Pass</option>
+                                    <option>30-Day Home Fiber Connection (Ksh 1,500)</option>
+                                    <option>Free 30-Minute Trial Request</option>
+                                    <option>General Support / Technical Help</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1.5 uppercase">Message Details</label>
+                                <textarea rows="3" placeholder="Tell us how we can help..." class="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-kenya-red"></textarea>
+                            </div>
+
+                            <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-kenya-red to-kenya-green text-white font-outfit font-black py-3.5 rounded-xl transition shadow-lg uppercase tracking-wider text-sm">
+                                Submit Inquiry
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- M-PESA Purchase Modal -->
+    <div id="paymentModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-panel max-w-md w-full p-6 sm:p-8 rounded-3xl border border-slate-700 shadow-2xl relative">
+            <button onclick="closeModal('paymentModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 rounded-full bg-kenya-green/20 text-kenya-green mx-auto flex items-center justify-center text-2xl mb-3">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+                <h3 class="font-outfit text-2xl font-black text-white uppercase">M-PESA Checkout</h3>
+                <p id="selectedPkgTitle" class="text-sm font-bold text-kenya-green mt-1">1 HOUR — Ksh 10</p>
+            </div>
+
+            <form onsubmit="triggerStkPush(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1.5 uppercase">M-PESA Phone Number</label>
+                    <input type="tel" id="mpesaPhone" required placeholder="07XXXXXXXX or 01XXXXXXXX" class="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-kenya-green">
+                </div>
+
+                <button type="submit" id="stkBtn" class="w-full bg-kenya-green hover:bg-emerald-600 text-white font-outfit font-black py-3.5 rounded-xl transition shadow-lg uppercase text-sm">
+                    PAY NOW VIA STK PUSH
+                </button>
+            </form>
+
+            <div class="mt-4 pt-4 border-t border-slate-800 text-center">
+                <p class="text-[11px] text-slate-400">Or Call / WhatsApp helpline directly:</p>
+                <a href="tel:0115503175" class="text-xs font-bold text-kenya-red mt-1 inline-block">0115 503 175</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Free Trial Modal -->
+    <div id="freeTrialModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-panel max-w-md w-full p-6 rounded-3xl border border-kenya-green/40 shadow-2xl relative">
+            <button onclick="closeModal('freeTrialModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="text-center mb-4">
+                <div class="w-12 h-12 rounded-full bg-kenya-green/20 text-kenya-green mx-auto flex items-center justify-center text-xl mb-2">
+                    <i class="fa-solid fa-gift"></i>
+                </div>
+                <h3 class="font-outfit text-2xl font-black text-white uppercase">GET 30 MIN FREE TRIAL!</h3>
+                <p class="text-xs text-slate-300 mt-1">No payment needed! Enter your phone number to activate instant test access.</p>
+            </div>
+
+            <form onsubmit="handleFreeTrial(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Phone Number</label>
+                    <input type="tel" required placeholder="07XXXXXXXX" class="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-kenya-green">
+                </div>
+                <button type="submit" id="trialBtn" class="w-full bg-kenya-green text-white font-outfit font-black py-3 rounded-xl uppercase text-sm">
+                    Activate Free Trial
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Refer & Earn Modal -->
+    <div id="referModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-panel max-w-md w-full p-6 rounded-3xl border border-kenya-red/40 shadow-2xl relative">
+            <button onclick="closeModal('referModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="text-center mb-4">
+                <div class="w-12 h-12 rounded-full bg-kenya-red/20 text-kenya-red mx-auto flex items-center justify-center text-xl mb-2">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h3 class="font-outfit text-2xl font-black text-white uppercase">REFER & EARN</h3>
+                <p class="text-xs text-slate-300 mt-1">Share your referral link. When a friend connects, you both get 30 Minutes Free Wi-Fi!</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center justify-between">
+                    <span id="refLink" class="text-xs text-cyan-400 font-mono font-bold truncate">netanywhere.co.ke/ref?id=25489</span>
+                    <button onclick="copyRefLink()" class="text-xs bg-slate-800 hover:bg-slate-700 text-white font-bold px-3 py-1.5 rounded-lg shrink-0">
+                        Copy
+                    </button>
+                </div>
+                <a href="https://wa.me/?text=Get%2030%20Minutes%20Free%20WiFi%20on%20net.anywhere!%20Check%20it%20out%20here:%20netanywhere.co.ke" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-xs uppercase">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Share via WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            document.getElementById('mobileNav').classList.toggle('hidden');
+        }
+
+        // Open/Close Modals
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // Package Selection for Payment
+        function selectPackage(name, price) {
+            document.getElementById('selectedPkgTitle').innerText = name + ' — Ksh ' + price;
+            openModal('paymentModal');
+        }
+
+        // STK Push Payment Simulator
+        function triggerStkPush(e) {
+            e.preventDefault();
+            const btn = document.getElementById('stkBtn');
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> SENDING STK PUSH...`;
+
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fa-solid fa-check"></i> STK PROMPT SENT TO PHONE!`;
+                btn.classList.remove('bg-kenya-green');
+                btn.classList.add('bg-emerald-500');
+
+                setTimeout(() => {
+                    closeModal('paymentModal');
+                    btn.disabled = false;
+                    btn.innerHTML = `PAY NOW VIA STK PUSH`;
+                    btn.classList.add('bg-kenya-green');
+                    btn.classList.remove('bg-emerald-500');
+                    alert('STK push notification sent! Please enter your M-PESA PIN to complete payment.');
+                }, 2000);
+            }, 1500);
+        }
+
+        // Free Trial Activation Simulator
+        function handleFreeTrial(e) {
+            e.preventDefault();
+            const btn = document.getElementById('trialBtn');
+            btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> ACTIVATING...`;
+            setTimeout(() => {
+                alert('Success! Your 30-Minute Free Trial has been activated on this device.');
+                closeModal('freeTrialModal');
+                btn.innerHTML = `Activate Free Trial`;
+            }, 1200);
+        }
+
+        // Copy Referral Link
+        function copyRefLink() {
+            const linkText = document.getElementById('refLink').innerText;
+            navigator.clipboard.writeText(linkText);
+            alert('Referral link copied to clipboard!');
+        }
+
+        // Estimator Logic
+        function calculateRecommendation() {
+            const val = document.getElementById('usageType').value;
+            const title = document.getElementById('recTitle');
+            const desc = document.getElementById('recDesc');
+
+            if (val === "10") {
+                title.innerText = "1 HOUR (Ksh 10)";
+                desc.innerText = "Perfect for quick messages, checking emails, and short browsing sessions.";
+            } else if (val === "30") {
+                title.innerText = "6 HOURS (Ksh 30)";
+                desc.innerText = "Best choice for continuous work, video calls, and half-day downloads.";
+            } else if (val === "100") {
+                title.innerText = "24 HOURS / 1 DAY SUPER SPEED (Ksh 100)";
+                desc.innerText = "Full 24-hour uninterrupted superfast internet for multiple large downloads.";
+            } else if (val === "200") {
+                title.innerText = "VIP UNLIMITED (Ksh 200)";
+                desc.innerText = "20 Hours of unrestricted high-speed bandwidth tailored for non-stop 4K streaming & online gaming.";
+            } else if (val === "1500") {
+                title.innerText = "30 DAY HOME UNLIMITED SUPERFAST (Ksh 1,500)";
+                desc.innerText = "Dedicated home Wi-Fi installation with unlimited monthly data downloads for the whole family.";
+            }
+        }
+
+        // Contact Form Submission
+        function handleInquiry(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> SUBMITTING...`;
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fa-solid fa-check"></i> INQUIRY SENT SUCCESSFULLY!`;
+                btn.classList.add('bg-emerald-600');
+                setTimeout(() => {
+                    btn.innerHTML = `SUBMIT INQUIRY`;
+                    btn.classList.remove('bg-emerald-600');
+                    e.target.reset();
+                }, 3000);
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
