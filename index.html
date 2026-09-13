@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Net.Anywhere – Fast, reliable Wi-Fi hotspot & home broadband in Kenya. Instant M-PESA activation. Packages from Ksh 10." />
+  <title>Net.Anywhere | Fast • Reliable • Anywhere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">NA</span>
+        <span class="logo-text">net.<strong>anywhere</strong></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#packages">Hotspot Packages</a>
+        <a href="#pppoe">PPPoE / Home</a>
+        <a href="#offers">Free Trial & Offers</a>
+        <a href="#estimator">Usage Estimator</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:0115503175" class="phone-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          0115 503 175
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-badge">🇰🇪 Connecting Kenya • Powering Possibilities</div>
+      <h1>STAY CONNECTED<br /><span>ANYTIME, ANYWHERE!</span></h1>
+      <p class="hero-sub">
+        Ultra-fast, fiber-backed Wi-Fi hotspot access and dedicated home connections.
+        Instant M-PESA activation with zero waiting time!
+      </p>
+      <div class="hero-cta">
+        <a href="#packages" class="btn btn-primary">Get Connected Now</a>
+        <a href="#offers" class="btn btn-outline">Claim 30 Min Free Trial</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value">OPERATIONAL</span>
+          <span class="stat-label">Hotspot Live Status</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">Unlimited</span>
+          <span class="stat-label">High-Speed Download</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">M-PESA</span>
+          <span class="stat-label">Instant STK Push</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>HIGH SPEED INTERNET</h3>
+          <p>Fiber-backed speeds for streaming, gaming & work.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>RELIABLE CONNECTION</h3>
+          <p>Stable uptime so you stay online when it matters.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>COVERAGE ANYWHERE</h3>
+          <p>Hotspots & home links across covered estates.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎧</div>
+          <h3>24/7 SUPPORT</h3>
+          <p>Call or WhatsApp us anytime: 0115 503 175</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOTSPOT PACKAGES ===================== -->
+  <section class="section packages" id="packages">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Hotspot Packages</span>
+        <h2>CHOOSE YOUR PLAN</h2>
+        <p>Superfast connectivity for browsing, social media, 4K streaming, and gaming.</p>
+      </div>
+
+      <div class="packages-grid">
+        <!-- Editable package cards – change price, duration, description as needed -->
+        <div class="pkg-card">
+          <div class="pkg-name">Standard</div>
+          <div class="pkg-duration">1 HOUR</div>
+          <div class="pkg-desc">Quick browsing & chats</div>
+          <div class="pkg-price">Ksh <strong>10</strong></div>
+          <button class="btn btn-pkg" data-package="1 Hour — Ksh 10" data-price="10">Buy Voucher</button>
+        </div>
+
+        <div class="pkg-card">
+          <div class="pkg-name">Express</div>
+          <div class="pkg-duration">2 HOURS</div>
+          <div class="pkg-desc">Social media & downloads</div>
+          <div class="pkg-price">Ksh <strong>15</strong></div>
+          <button class="btn btn-pkg" data-package="2 Hours — Ksh 15" data-price="15">Buy Voucher</button>
+        </div>
+
+        <div class="pkg-card">
+          <div class="pkg-name">Value</div>
+          <div class="pkg-duration">4 HOURS</div>
+          <div class="pkg-desc">Work sessions & video calls</div>
+          <div class="pkg-price">Ksh <strong>20</strong></div>
+          <button class="btn btn-pkg" data-package="4 Hours — Ksh 20" data-price="20">Buy Voucher</button>
+        </div>
+
+        <div class="pkg-card popular">
+          <div class="popular-badge">Popular</div>
+          <div class="pkg-name">Popular</div>
+          <div class="pkg-duration">6 HOURS</div>
+          <div class="pkg-desc">Half-day non-stop access</div>
+          <div class="pkg-price">Ksh <strong>30</strong></div>
+          <button class="btn btn-pkg" data-package="6 Hours — Ksh 30" data-price="30">Buy Voucher</button>
+        </div>
+
+        <div class="pkg-card">
+          <div class="pkg-name">Super Speed</div>
+          <div class="pkg-duration">12 HOURS</div>
+          <div class="pkg-desc">SUPER SPEED</div>
+          <div class="pkg-price">Ksh <strong>50</strong></div>
+          <button class="btn btn-pkg" data-package="12 Hours — Ksh 50" data-price="50">Buy Voucher</button>
+        </div>
+
+        <div class="pkg-card">
+          <div class="pkg-name">1 Day Pass</div>
+          <div class="pkg-duration">24 HOURS</div>
+          <div class="pkg-desc">SUPER SPEED / 1 DAY</div>
+          <div class="pkg-price">Ksh <strong>100</strong></div>
+          <button class="btn btn-pkg" data-package="24 Hours — Ksh 100" data-price="100">Buy Voucher</button>
+        </div>
+
+        <div class="pkg-card vip">
+          <div class="vip-badge">👑 VIP</div>
+          <div class="pkg-name">VIP Unlimited</div>
+          <div class="pkg-duration">20 HOURS</div>
+          <div class="pkg-desc">HIGH-SPEED STREAMING</div>
+          <div class="pkg-price">Ksh <strong>200</strong></div>
+          <button class="btn btn-pkg" data-package="VIP Unlimited 20Hrs — Ksh 200" data-price="200">Buy VIP Pass</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PPPoE / HOME UNLIMITED ===================== -->
+  <section class="section pppoe" id="pppoe">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Home & Business</span>
+        <h2>PPPoE HOME UNLIMITED</h2>
+        <p>Dedicated monthly fiber connection directly to your house or apartment. Truly unlimited downloads with no data caps.</p>
+      </div>
+
+      <div class="pppoe-intro">
+        <div class="pppoe-highlight">
+          <span class="from-label">For as low as</span>
+          <span class="from-price">Ksh 1,500</span>
+          <span class="from-period">/ month</span>
+        </div>
+        <p>Stable PPPoE credentials • Professional installation available • Perfect for homes, offices & businesses.</p>
+      </div>
+
+      <!-- EDIT PRICES BELOW AS NEEDED -->
+      <div class="pppoe-grid">
+        <div class="pppoe-card">
+          <div class="pppoe-speed">5 Mbps</div>
+          <div class="pppoe-name">Home</div>
+          <ul>
+            <li>Unlimited data</li>
+            <li>Ideal for light browsing & WhatsApp</li>
+            <li>1–2 devices</li>
+          </ul>
+          <div class="pppoe-price">Ksh <strong>1,500</strong><span>/mo</span></div>
+          <button class="btn btn-pkg" data-package="PPPoE 5Mbps Home — Ksh 1,500/mo" data-price="1500">Book Home Link</button>
+        </div>
+
+        <div class="pppoe-card">
+          <div class="pppoe-speed">10 Mbps</div>
+          <div class="pppoe-name">Standard</div>
+          <ul>
+            <li>Unlimited data</li>
+            <li>Streaming + work from home</li>
+            <li>3–5 devices</li>
+          </ul>
+          <div class="pppoe-price">Ksh <strong>2,000</strong><span>/mo</span></div>
+          <button class="btn btn-pkg" data-package="PPPoE 10Mbps Standard — Ksh 2,000/mo" data-price="2000">Book Home Link</button>
+        </div>
+
+        <div class="pppoe-card popular">
+          <div class="popular-badge">Popular</div>
+          <div class="pppoe-speed">20 Mbps</div>
+          <div class="pppoe-name">Premium</div>
+          <ul>
+            <li>Unlimited data</li>
+            <li>4K streaming & video calls</li>
+            <li>Whole family / small office</li>
+          </ul>
+          <div class="pppoe-price">Ksh <strong>2,500</strong><span>/mo</span></div>
+          <button class="btn btn-pkg" data-package="PPPoE 20Mbps Premium — Ksh 2,500/mo" data-price="2500">Book Home Link</button>
+        </div>
+
+        <div class="pppoe-card">
+          <div class="pppoe-speed">30 Mbps</div>
+          <div class="pppoe-name">Premium+</div>
+          <ul>
+            <li>Unlimited data</li>
+            <li>Heavy streaming & gaming</li>
+            <li>Multiple simultaneous users</li>
+          </ul>
+          <div class="pppoe-price">Ksh <strong>3,000</strong><span>/mo</span></div>
+          <button class="btn btn-pkg" data-package="PPPoE 30Mbps Premium — Ksh 3,000/mo" data-price="3000">Book Home Link</button>
+        </div>
+
+        <div class="pppoe-card">
+          <div class="pppoe-speed">40 Mbps</div>
+          <div class="pppoe-name">Business</div>
+          <ul>
+            <li>Unlimited data</li>
+            <li>Office / multi-user ready</li>
+            <li>Priority support</li>
+          </ul>
+          <div class="pppoe-price">Ksh <strong>3,500</strong><span>/mo</span></div>
+          <button class="btn btn-pkg" data-package="PPPoE 40Mbps Business — Ksh 3,500/mo" data-price="3500">Book Home Link</button>
+        </div>
+
+        <div class="pppoe-card">
+          <div class="pppoe-speed">50 Mbps</div>
+          <div class="pppoe-name">Business+</div>
+          <ul>
+            <li>Unlimited data</li>
+            <li>High-demand businesses</li>
+            <li>Best performance</li>
+          </ul>
+          <div class="pppoe-price">Ksh <strong>4,000</strong><span>/mo</span></div>
+          <button class="btn btn-pkg" data-package="PPPoE 50Mbps Business — Ksh 4,000/mo" data-price="4000">Book Home Link</button>
+        </div>
+      </div>
+
+      <p class="pppoe-note">
+        * Prices are indicative and editable. Installation may attract a one-time fee depending on location.
+        Contact us for exact quotation and coverage check.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== FREE TRIAL & OFFERS ===================== -->
+  <section class="section offers" id="offers">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Special Offers</span>
+        <h2>TRY US FREE TODAY!</h2>
+      </div>
+
+      <div class="offers-grid">
+        <div class="offer-card free-trial">
+          <div class="offer-icon">🎁</div>
+          <h3>GET 30 MINUTES FREE TRIAL!</h3>
+          <p>Test our high speed before you buy. No payment needed!</p>
+          <button class="btn btn-primary" id="openTrialModal">CLAIM FREE 30 MIN</button>
+        </div>
+
+        <div class="offer-card refer">
+          <div class="offer-icon">🤝</div>
+          <h3>REFER & EARN!</h3>
+          <p>30 MINUTES FREE WIFI! Refer a friend and you BOTH get 30 minutes free access!</p>
+          <button class="btn btn-outline-light" id="openReferModal">GET REFERRAL LINK</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== USAGE ESTIMATOR ===================== -->
+  <section class="section estimator" id="estimator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Smart Tool</span>
+        <h2>Which Package Do You Need?</h2>
+        <p>Answer one question and get an instant recommendation.</p>
+      </div>
+
+      <div class="estimator-box">
+        <label class="estimator-label">What will you be using the internet for?</label>
+        <div class="estimator-options">
+          <button class="est-opt" data-rec="1 HOUR (Ksh 10)" data-desc="Perfect for quick messages, checking emails, and short browsing sessions.">
+            Quick WhatsApp & Social Media Check (Ksh 10 – 1 Hr)
+          </button>
+          <button class="est-opt" data-rec="6 HOURS (Ksh 30)" data-desc="Great for half-day work, web surfing and light streaming.">
+            Half Day Work & Web Surfing (Ksh 30 – 6 Hrs)
+          </button>
+          <button class="est-opt" data-rec="24 HOURS (Ksh 100)" data-desc="Full day of super speed downloads, streaming and browsing.">
+            Full Day Super Speed Download (Ksh 100 – 24 Hrs)
+          </button>
+          <button class="est-opt" data-rec="VIP UNLIMITED (Ksh 200)" data-desc="Non-stop 4K streaming and heavy usage without limits.">
+            Non-stop 4K Streaming / Movies (Ksh 200 – VIP Unlimited)
+          </button>
+          <button class="est-opt" data-rec="Home Unlimited (from Ksh 1,500)" data-desc="Best value for whole house monthly unlimited fiber connection.">
+            Monthly Home Wi-Fi for Whole House (from Ksh 1,500 – 30 Days)
+          </button>
+        </div>
+
+        <div class="recommendation" id="recommendation" hidden>
+          <h4>Recommended Package</h4>
+          <div class="rec-name" id="recName"></div>
+          <p id="recDesc"></p>
+          <a href="#packages" class="btn btn-primary">Get Connected</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT / QUERY ===================== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contact & Support</span>
+        <h2>BOOK YOUR WIFI NOW!</h2>
+        <p>Have questions or need assistance setting up your connection? Reach out via call, WhatsApp or the form below.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-item">
+            <strong>Call / WhatsApp Support</strong>
+            <a href="tel:0115503175">0115 503 175</a>
+            <a href="https://wa.me/254115503175" target="_blank" rel="noopener" class="wa-link">Chat on WhatsApp →</a>
+          </div>
+          <div class="info-item">
+            <strong>Official Email</strong>
+            <a href="mailto:netanywhere254@gmail.com">netanywhere254@gmail.com</a>
+          </div>
+          <div class="info-item">
+            <strong>Social Handle</strong>
+            <a href="https://www.instagram.com/net.anywhere" target="_blank" rel="noopener">@net.anywhere</a>
+          </div>
+          <div class="info-item">
+            <strong>Business Hours</strong>
+            <span>Daily support via call & WhatsApp</span>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3>Send Us a Direct Message / Query</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number (M-PESA Number)</label>
+              <input type="tel" id="phone" name="phone" placeholder="07XX XXX XXX" required />
+            </div>
+            <div class="form-group">
+              <label for="location">Estate / Location</label>
+              <input type="text" id="location" name="location" placeholder="e.g. Pipeline, Embakasi" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Interested Service</label>
+            <select id="service" name="service" required>
+              <option value="">Select service…</option>
+              <option value="Hotspot Voucher">Wi-Fi Hotspot Voucher Pass</option>
+              <option value="Home Fiber">30-Day Home Fiber Connection (from Ksh 1,500)</option>
+              <option value="Free Trial">Free 30-Minute Trial Request</option>
+              <option value="Support">General Support / Technical Help</option>
+              <option value="PPPoE Business">Business PPPoE Package</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message Details</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us what you need…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Submit Inquiry</button>
+          <p class="form-note">We will reply via call, WhatsApp or email (netanywhere254@gmail.com).</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">NA</span>
+          <span class="logo-text">net.<strong>anywhere</strong></span>
+        </div>
+        <p>FAST • RELIABLE • ANYWHERE</p>
+        <p class="footer-tagline">High-Speed Broadband & Wi-Fi Hotspot Network</p>
+      </div>
+      <div class="footer-links">
+        <a href="#packages">Packages</a>
+        <a href="#pppoe">PPPoE Home</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <a href="tel:0115503175">0115 503 175</a>
+        <a href="mailto:netanywhere254@gmail.com">netanywhere254@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © <span id="year"></span> Net.Anywhere 254. All rights reserved. • Confidential site content.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== MODALS ===================== -->
+  <!-- M-PESA / Buy Modal -->
+  <div class="modal" id="payModal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" data-close aria-label="Close">&times;</button>
+      <h3>M-PESA Checkout</h3>
+      <p class="modal-pkg" id="modalPkgName">1 HOUR — Ksh 10</p>
+      <div class="form-group">
+        <label for="mpesaPhone">M-PESA Phone Number</label>
+        <input type="tel" id="mpesaPhone" placeholder="07XX XXX XXX" />
+      </div>
+      <button class="btn btn-primary btn-full" id="payNowBtn">PAY NOW VIA STK PUSH</button>
+      <p class="modal-or">Or Call / WhatsApp helpline directly:</p>
+      <a href="tel:0115503175" class="modal-phone">0115 503 175</a>
+      <p class="modal-note">STK Push is simulated on this demo site. Integrate your real payment gateway or till number here.</p>
+    </div>
+  </div>
+
+  <!-- Free Trial Modal -->
+  <div class="modal" id="trialModal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" data-close aria-label="Close">&times;</button>
+      <h3>GET 30 MIN FREE TRIAL!</h3>
+      <p>No payment needed! Enter your phone number to activate instant test access.</p>
+      <div class="form-group">
+        <label for="trialPhone">Phone Number</label>
+        <input type="tel" id="trialPhone" placeholder="07XX XXX XXX" />
+      </div>
+      <button class="btn btn-primary btn-full" id="activateTrialBtn">Activate Free Trial</button>
+    </div>
+  </div>
+
+  <!-- Referral Modal -->
+  <div class="modal" id="referModal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" data-close aria-label="Close">&times;</button>
+      <h3>REFER & EARN</h3>
+      <p>Share your referral link. When a friend connects, you both get 30 Minutes Free Wi-Fi!</p>
+      <div class="refer-link-box">
+        <input type="text" id="referLink" value="https://netanywhere.co.ke/ref?id=25489" readonly />
+        <button class="btn btn-sm" id="copyReferBtn">Copy</button>
+      </div>
+      <a href="https://wa.me/?text=Join%20Net.Anywhere%20and%20get%2030%20min%20free%20WiFi!%20https://netanywhere.co.ke/ref?id=25489" target="_blank" rel="noopener" class="btn btn-primary btn-full">Share via WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- ===================== CHATBOT ===================== -->
+  <div class="chatbot" id="chatbot">
+    <button class="chatbot-toggle" id="chatToggle" aria-label="Open chat">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      <span class="chat-badge">1</span>
+    </button>
+    <div class="chat-window" id="chatWindow" hidden>
+      <div class="chat-header">
+        <div>
+          <strong>Net.Anywhere Support</strong>
+          <span class="chat-status">● Online</span>
+        </div>
+        <button class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot">
+          Habari! 👋 I’m the Net.Anywhere assistant. How can I help you today?
+          <div class="quick-replies">
+            <button data-q="packages">View packages</button>
+            <button data-q="trial">Free trial</button>
+            <button data-q="home">Home fiber</button>
+            <button data-q="support">Talk to human</button>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Type your question…" autocomplete="off" />
+        <button id="chatSend">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
